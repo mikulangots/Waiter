@@ -16,6 +16,7 @@
 		0FEAF5342463001400F9FF3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAF5332463001400F9FF3B /* main.m */; };
 		0FEAF53E2463001400F9FF3B /* WaiterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAF53D2463001400F9FF3B /* WaiterTests.m */; };
 		0FEAF5492463001400F9FF3B /* WaiterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAF5482463001400F9FF3B /* WaiterUITests.m */; };
+		0FEAF5572463023800F9FF3B /* Logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FEAF5562463023800F9FF3B /* Logo.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		0FEAF5442463001400F9FF3B /* WaiterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaiterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FEAF5482463001400F9FF3B /* WaiterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaiterUITests.m; sourceTree = "<group>"; };
 		0FEAF54A2463001400F9FF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FEAF5562463023800F9FF3B /* Logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Logo.jpeg; path = ../../../../../Downloads/Logo.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				0FEAF5272463001300F9FF3B /* ViewController.h */,
 				0FEAF5282463001300F9FF3B /* ViewController.m */,
 				0FEAF52A2463001300F9FF3B /* Main.storyboard */,
+				0FEAF5562463023800F9FF3B /* Logo.jpeg */,
 				0FEAF52D2463001400F9FF3B /* Assets.xcassets */,
 				0FEAF52F2463001400F9FF3B /* LaunchScreen.storyboard */,
 				0FEAF5322463001400F9FF3B /* Info.plist */,
@@ -242,6 +245,7 @@
 			files = (
 				0FEAF5312463001400F9FF3B /* LaunchScreen.storyboard in Resources */,
 				0FEAF52E2463001400F9FF3B /* Assets.xcassets in Resources */,
+				0FEAF5572463023800F9FF3B /* Logo.jpeg in Resources */,
 				0FEAF52C2463001300F9FF3B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
