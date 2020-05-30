@@ -16,6 +16,12 @@
 		0FEAF5342463001400F9FF3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAF5332463001400F9FF3B /* main.m */; };
 		0FEAF53E2463001400F9FF3B /* WaiterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAF53D2463001400F9FF3B /* WaiterTests.m */; };
 		0FEAF5492463001400F9FF3B /* WaiterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAF5482463001400F9FF3B /* WaiterUITests.m */; };
+		0FFE45082482AD3C00119830 /* FoodImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FFE45062482AD3C00119830 /* FoodImage2.jpg */; };
+		0FFE45092482AD3C00119830 /* FoodImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FFE45072482AD3C00119830 /* FoodImage1.jpg */; };
+		0FFE450C2482B7F500119830 /* ViewControllerRestaurantDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE450B2482B7F500119830 /* ViewControllerRestaurantDetails.m */; };
+		0FFE450F2482B87F00119830 /* ViewControllerRestaurantSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE450E2482B87F00119830 /* ViewControllerRestaurantSearch.m */; };
+		0FFE45112482D09B00119830 /* QRCodeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FFE45102482D09B00119830 /* QRCodeImage.png */; };
+		0FFE45142482D23100119830 /* ViewControllerQRScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE45132482D23100119830 /* ViewControllerQRScanner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,15 @@
 		0FEAF5442463001400F9FF3B /* WaiterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaiterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FEAF5482463001400F9FF3B /* WaiterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaiterUITests.m; sourceTree = "<group>"; };
 		0FEAF54A2463001400F9FF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FFE45062482AD3C00119830 /* FoodImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FoodImage2.jpg; path = ../../../../../../Downloads/FoodImage2.jpg; sourceTree = "<group>"; };
+		0FFE45072482AD3C00119830 /* FoodImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FoodImage1.jpg; path = ../../../../../../Downloads/FoodImage1.jpg; sourceTree = "<group>"; };
+		0FFE450A2482B7F500119830 /* ViewControllerRestaurantDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerRestaurantDetails.h; sourceTree = "<group>"; };
+		0FFE450B2482B7F500119830 /* ViewControllerRestaurantDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRestaurantDetails.m; sourceTree = "<group>"; };
+		0FFE450D2482B87F00119830 /* ViewControllerRestaurantSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerRestaurantSearch.h; sourceTree = "<group>"; };
+		0FFE450E2482B87F00119830 /* ViewControllerRestaurantSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRestaurantSearch.m; sourceTree = "<group>"; };
+		0FFE45102482D09B00119830 /* QRCodeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QRCodeImage.png; path = ../../../../../../Downloads/QRCodeImage.png; sourceTree = "<group>"; };
+		0FFE45122482D23100119830 /* ViewControllerQRScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerQRScanner.h; sourceTree = "<group>"; };
+		0FFE45132482D23100119830 /* ViewControllerQRScanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerQRScanner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +119,7 @@
 		0FEAF5202463001300F9FF3B /* Waiter */ = {
 			isa = PBXGroup;
 			children = (
+				0FFE45052482AB9F00119830 /* Images */,
 				0FEAF5212463001300F9FF3B /* AppDelegate.h */,
 				0FEAF5222463001300F9FF3B /* AppDelegate.m */,
 				0FEAF5242463001300F9FF3B /* SceneDelegate.h */,
@@ -115,6 +131,12 @@
 				0FEAF52F2463001400F9FF3B /* LaunchScreen.storyboard */,
 				0FEAF5322463001400F9FF3B /* Info.plist */,
 				0FEAF5332463001400F9FF3B /* main.m */,
+				0FFE450A2482B7F500119830 /* ViewControllerRestaurantDetails.h */,
+				0FFE450B2482B7F500119830 /* ViewControllerRestaurantDetails.m */,
+				0FFE450D2482B87F00119830 /* ViewControllerRestaurantSearch.h */,
+				0FFE450E2482B87F00119830 /* ViewControllerRestaurantSearch.m */,
+				0FFE45122482D23100119830 /* ViewControllerQRScanner.h */,
+				0FFE45132482D23100119830 /* ViewControllerQRScanner.m */,
 			);
 			path = Waiter;
 			sourceTree = "<group>";
@@ -135,6 +157,16 @@
 				0FEAF54A2463001400F9FF3B /* Info.plist */,
 			);
 			path = WaiterUITests;
+			sourceTree = "<group>";
+		};
+		0FFE45052482AB9F00119830 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0FFE45102482D09B00119830 /* QRCodeImage.png */,
+				0FFE45072482AD3C00119830 /* FoodImage1.jpg */,
+				0FFE45062482AD3C00119830 /* FoodImage2.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,8 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FEAF5312463001400F9FF3B /* LaunchScreen.storyboard in Resources */,
+				0FFE45092482AD3C00119830 /* FoodImage1.jpg in Resources */,
+				0FFE45082482AD3C00119830 /* FoodImage2.jpg in Resources */,
 				0FEAF52E2463001400F9FF3B /* Assets.xcassets in Resources */,
 				0FEAF52C2463001300F9FF3B /* Main.storyboard in Resources */,
+				0FFE45112482D09B00119830 /* QRCodeImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FFE450C2482B7F500119830 /* ViewControllerRestaurantDetails.m in Sources */,
 				0FEAF5292463001300F9FF3B /* ViewController.m in Sources */,
 				0FEAF5232463001300F9FF3B /* AppDelegate.m in Sources */,
 				0FEAF5342463001400F9FF3B /* main.m in Sources */,
+				0FFE45142482D23100119830 /* ViewControllerQRScanner.m in Sources */,
+				0FFE450F2482B87F00119830 /* ViewControllerRestaurantSearch.m in Sources */,
 				0FEAF5262463001300F9FF3B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
