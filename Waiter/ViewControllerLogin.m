@@ -1,25 +1,24 @@
 //
-//  ViewControllerQRScanner.m
+//  ViewControllerLogin.m
 //  Waiter
 //
 //  Created by aitadmin on 31/5/20.
 //  Copyright © 2020 Michael Hallorina. All rights reserved.
 //
 
-#import "ViewControllerQRScanner.h"
-#import "ViewControllerMenu.h"
+#import "ViewControllerLogin.h"
+#import "ViewControllerMap.h"
 
-@interface ViewControllerQRScanner ()
-@property (weak, nonatomic) IBOutlet UILabel *lblRestaurantName;
+
+@interface ViewControllerLogin ()
 
 @end
 
-@implementation ViewControllerQRScanner
+@implementation ViewControllerLogin
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 /*
@@ -31,13 +30,16 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)clickScanBarcode:(id)sender {
-    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewControllerMenu* myVC = [sb instantiateViewControllerWithIdentifier:@"ViewControllerMenu"];
-    //myVC.receivedRestaurantName = itemClicked;
+
+- (IBAction)clickLogin:(id)sender {
     
+    //UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //UITabBarController *myVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewControllerMap"];
+    //myVC.selectedIndex = 0;
     //[self presentViewController:myVC animated:YES completion:nil];
-    [self.navigationController pushViewController:myVC animated:YES];
+    
+    //[self.navigationController pushViewController:myVC animated:YES];
 }
+
 
 @end
