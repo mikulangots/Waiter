@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.ref = [[FIRDatabase database] reference];
     
     dictionaryRestaurantImage = @{
         @"Aroma": @"FoodImage1.jpg",

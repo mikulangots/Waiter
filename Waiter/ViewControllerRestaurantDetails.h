@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Firebase;
+@import FirebaseDatabase;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 @property NSString *receivedRestaurantName;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @end
 

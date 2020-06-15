@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCrypto.h>
+@import Firebase;
+@import FBSDKCoreKit;
+@import FBSDKLoginKit;
 
 @interface AppDelegate ()
 
@@ -17,8 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [FIRApp configure];
+    [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    [FBSDKLoginButton class];
     return YES;
 }
+
 
 
 #pragma mark - UISceneSession lifecycle
