@@ -13,7 +13,8 @@
 
 
 @interface ViewControllerLogin ()
-@property (weak, nonatomic) IBOutlet UIButton *facebookBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -23,31 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    FBSDKLoginButton *facebookBtn = [[FBSDKLoginButton alloc] init];
-    // Optional: Place the button in the center of your view.
-    //loginButton.center = self.view.center;
-    //[self.view addSubview:facebookBtn];
-    
-    //CUSTOM FACEBOOK LOGIN
-    //UIButton *facebookBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    //[facebookBtn setTitle: @"My Login Button" forState: UIControlStateNormal];
-    
-    // Handle clicks on the button
-    //[facebookBtn
-     // addTarget:self
-      //action:@selector(loginButtonClicked) //forControlEvents:UIControlEventTouchUpInside];
-    
-    // Add the button to the view
-    //[self.view addSubview:facebookBtn];
-    
-    if ([FBSDKAccessToken currentAccessToken]) {
-     //User is logged in, do work such as go to next view controller.
-        
-    }
-    facebookBtn.permissions = @[@"public_profile", @"email"];
-    
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self initComponents];
+}
 /*
 #pragma mark - Navigation
 
@@ -58,22 +39,30 @@
 }
 */
 
-// Once the button is clicked, show the login dialog
--(void)loginButtonClicked
-{
-  FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-  [login
-    logInWithPermissions: @[@"public_profile"]
-          fromViewController:self
-                     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-    if (error) {
-      NSLog(@"Process error");
-    } else if (result.isCancelled) {
-      NSLog(@"Cancelled");
-    } else {
-      NSLog(@"Logged in");
+//After you present the authentication view and the user signs in, the result is returned to the FirebaseUI Auth delegate in the didSignInWithUser:error: method:
+- (void)authUI:(FUIAuth *)authUI
+didSignInWithUser:(nullable FIRUser *)user
+            error:(nullable NSError *)error {
+  // Implement this method to handle signed in user or error if any.
+    if (user==nil){
+        NSLog(@"Login Unsuccessful ---------------------");
+    }else{
+        NSLog(@"Login Successful ---------------------");
     }
-  }];
+}
+
+//If you enabled Google or Facebook sign-in, implement a handler for the result of the Google and Facebook sign-up flows:
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+  NSString *sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
+  return [[FUIAuth defaultAuthUI] handleOpenURL:url sourceApplication:sourceApplication];
+}
+
+
+//User defined methods
+-(void)initComponents{
+    _loginBtn.layer.cornerRadius = 15;
 }
 
 - (IBAction)clickLogin:(id)sender {
@@ -84,6 +73,21 @@
     [self presentViewController:myVC animated:YES completion:nil];
     
     [self.navigationController pushViewController:myVC animated:YES];
+}
+- (IBAction)loginBtnClicked:(id)sender {
+    FUIAuth *authUI = [FUIAuth defaultAuthUI];
+    // You need to adopt a FUIAuthDelegate protocol to receive callback
+    authUI.delegate = self;
+    
+    NSArray<id<FUIAuthProvider>> *providers = @[
+        [[FUIEmailAuth alloc] init],
+      [[FUIGoogleAuth alloc] init],
+      [[FUIFacebookAuth alloc] init]
+    ];
+    authUI.providers = providers;
+    
+    UINavigationController *authViewController = [authUI authViewController];
+    [self presentViewController:authViewController animated:YES completion:nil];
 }
 
 

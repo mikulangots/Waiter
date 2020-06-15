@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Firebase;
+@import FirebaseUI;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewControllerLogin : UIViewController
+@interface ViewControllerLogin : UIViewController <FUIAuthDelegate>
 
 @end
 

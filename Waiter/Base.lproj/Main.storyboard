@@ -15,117 +15,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f90-c5-sHi">
-                                <rect key="frame" x="94.5" y="175.5" width="225.5" height="440"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sYj-sq-lbz">
-                                        <rect key="frame" x="60" y="30" width="105.5" height="380"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I24-D6-kfg">
-                                                <rect key="frame" x="0.0" y="0.0" width="105.5" height="33"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="LOGIN">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y2w-YR-CI1">
-                                                <rect key="frame" x="0.0" y="53" width="105.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="username"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="My6-HM-4qg">
-                                                <rect key="frame" x="0.0" y="107" width="105.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBT-Wt-cQf">
-                                                <rect key="frame" x="0.0" y="161" width="105.5" height="33"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="SIGN IN">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="cOY-4D-MmJ" kind="presentation" modalPresentationStyle="fullScreen" id="RRf-2G-Bmq"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR LOGIN VIA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZf-hU-e0J">
-                                                <rect key="frame" x="0.0" y="214" width="105.5" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qhY-Jw-sQc">
-                                                <rect key="frame" x="0.0" y="250" width="105.5" height="130"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUY-WB-VyF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="60"/>
-                                                        <state key="normal" image="GoogleIcon"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyD-Dl-bnC" customClass="FBSDKLoginButton">
-                                                        <rect key="frame" x="0.0" y="70" width="105.5" height="60"/>
-                                                        <state key="normal" image="FacebookIcon"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="sYj-sq-lbz" secondAttribute="trailing" constant="60" id="MQ9-qT-Cmn"/>
-                                    <constraint firstAttribute="bottom" secondItem="sYj-sq-lbz" secondAttribute="bottom" constant="30" id="VBd-oK-ShZ"/>
-                                    <constraint firstItem="sYj-sq-lbz" firstAttribute="leading" secondItem="f90-c5-sHi" secondAttribute="leading" constant="60" id="Z3L-Rn-yIm"/>
-                                    <constraint firstItem="sYj-sq-lbz" firstAttribute="top" secondItem="f90-c5-sHi" secondAttribute="top" constant="30" id="qK3-A8-yqG"/>
-                                </constraints>
-                            </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopTitle" translatesAutoresizingMaskIntoConstraints="NO" id="pD4-we-x2P">
-                                <rect key="frame" x="155.5" y="64" width="103.5" height="103.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Gef-sA-lvW"/>
-                                    <constraint firstAttribute="width" secondItem="pD4-we-x2P" secondAttribute="height" multiplier="1:1" id="bA8-DB-IMW"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Gef-sA-lvW"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="Gef-sA-lvW"/>
-                                    </mask>
-                                </variation>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ghp-BU-qFI">
+                                <rect key="frame" x="147" y="126" width="119" height="294"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBT-Wt-cQf">
+                                <rect key="frame" x="154" y="509" width="105.5" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginBtnClicked:" destination="r0l-Oy-ods" eventType="touchUpInside" id="Acc-Up-0aj"/>
+                                    <segue destination="cOY-4D-MmJ" kind="presentation" modalPresentationStyle="fullScreen" id="RRf-2G-Bmq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="f90-c5-sHi" firstAttribute="centerX" secondItem="xem-cV-OWP" secondAttribute="centerX" id="MLz-Cb-9c0"/>
-                            <constraint firstItem="pD4-we-x2P" firstAttribute="centerX" secondItem="JLg-tY-a1h" secondAttribute="centerX" id="bpu-i5-g3p"/>
-                            <constraint firstItem="pD4-we-x2P" firstAttribute="height" secondItem="JLg-tY-a1h" secondAttribute="height" multiplier="0.169082" id="iBQ-25-p5m"/>
-                            <constraint firstItem="pD4-we-x2P" firstAttribute="width" secondItem="JLg-tY-a1h" secondAttribute="width" multiplier="0.25" id="jSJ-3t-aC1"/>
-                            <constraint firstItem="pD4-we-x2P" firstAttribute="top" secondItem="xem-cV-OWP" secondAttribute="top" constant="20" id="lGv-G3-o0u"/>
-                            <constraint firstItem="f90-c5-sHi" firstAttribute="firstBaseline" secondItem="pD4-we-x2P" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="nvs-HL-QUa"/>
+                            <constraint firstItem="oBT-Wt-cQf" firstAttribute="leading" secondItem="xem-cV-OWP" secondAttribute="leading" constant="50" id="3Mh-P6-83S"/>
+                            <constraint firstItem="xem-cV-OWP" firstAttribute="trailing" secondItem="ghp-BU-qFI" secondAttribute="trailing" constant="148" id="B4a-BV-g4g"/>
+                            <constraint firstItem="ghp-BU-qFI" firstAttribute="leading" secondItem="xem-cV-OWP" secondAttribute="leading" constant="147" id="LwT-h7-1ry"/>
+                            <constraint firstItem="xem-cV-OWP" firstAttribute="trailing" secondItem="oBT-Wt-cQf" secondAttribute="trailing" constant="50" id="PuZ-f9-qhu"/>
+                            <constraint firstItem="oBT-Wt-cQf" firstAttribute="top" secondItem="ghp-BU-qFI" secondAttribute="bottom" constant="89" id="dVw-xc-tWh"/>
+                            <constraint firstItem="ghp-BU-qFI" firstAttribute="top" secondItem="xem-cV-OWP" secondAttribute="top" constant="82" id="qLN-nC-vZh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xem-cV-OWP"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="iBQ-25-p5m"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <include reference="iBQ-25-p5m"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Zlm-ze-EWd"/>
                     <connections>
-                        <outlet property="facebookBtn" destination="LyD-Dl-bnC" id="FCO-HM-JIh"/>
+                        <outlet property="loginBtn" destination="oBT-Wt-cQf" id="K1m-Q6-3cU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCT-3r-7xH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1046" y="57"/>
+            <point key="canvasLocation" x="-1046.376811594203" y="56.919642857142854"/>
         </scene>
         <!--PROFILE-->
         <scene sceneID="6N6-pQ-GNP">
@@ -1060,9 +984,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FacebookIcon" width="60" height="60"/>
         <image name="FoodImage1.jpg" width="5179" height="3727"/>
-        <image name="GoogleIcon" width="60" height="60"/>
+        <image name="Logo" width="232" height="510"/>
         <image name="Maps.jpg" width="1080" height="1470"/>
         <image name="QRCodeImage.png" width="1200" height="1200"/>
         <image name="TopTitle" width="732" height="258"/>
