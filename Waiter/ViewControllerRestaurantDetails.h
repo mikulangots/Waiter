@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @import Firebase;
 @import FirebaseDatabase;
+@import FirebaseUI;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
     NSDictionary *dictionaryRestaurantAddress;
     NSDictionary *dictionaryRestaurantHours;
 }
-
+@property FIRFirestore *defaultFirestore;
+@property FIRAuthStateDidChangeListenerHandle handle;
 @property NSString *receivedRestaurantName;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 

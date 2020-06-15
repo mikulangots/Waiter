@@ -1,18 +1,18 @@
 //
-//  ViewControllerMap.m
+//  ViewControllerProfile.m
 //  Waiter
 //
-//  Created by aitadmin on 31/5/20.
+//  Created by aitadmin on 16/6/20.
 //  Copyright © 2020 Michael Hallorina. All rights reserved.
 //
 
-#import "ViewControllerMap.h"
-
-@interface ViewControllerMap ()
+#import "ViewControllerProfile.h"
+@import FirebaseAuth;
+@interface ViewControllerProfile ()
 
 @end
 
-@implementation ViewControllerMap
+@implementation ViewControllerProfile
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,5 +46,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)logoutBtnClicked:(id)sender {
+    NSError *signOutError;
+    BOOL status = [[FIRAuth auth] signOut:&signOutError];
+    if (!status){
+        NSLog(@"Error signing out: %@", signOutError);
+        return;
+    }else{
+        NSLog(@"[FIRAuth auth] Signout Successful ------------");
+        [self dismissViewControllerAnimated:TRUE completion:nil];
+        
+    }
+   
+}
 
 @end

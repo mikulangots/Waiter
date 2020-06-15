@@ -27,7 +27,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginBtnClicked:" destination="r0l-Oy-ods" eventType="touchUpInside" id="Acc-Up-0aj"/>
-                                    <segue destination="cOY-4D-MmJ" kind="presentation" modalPresentationStyle="fullScreen" id="RRf-2G-Bmq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,12 +48,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCT-3r-7xH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1046.376811594203" y="56.919642857142854"/>
+            <point key="canvasLocation" x="-12" y="57"/>
         </scene>
         <!--PROFILE-->
         <scene sceneID="6N6-pQ-GNP">
             <objects>
-                <viewController title="PROFILE" id="hnX-cu-RLv" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="PROFILE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hnX-cu-RLv" customClass="ViewControllerProfile" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L8w-39-SF0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,9 +139,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFP-Mp-E6Q">
                                                 <rect key="frame" x="0.0" y="241" width="200" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="LOGOUT">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="logoutBtnClicked:" destination="hnX-cu-RLv" eventType="touchUpInside" id="bkI-PW-T0W"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -395,7 +398,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yyb-bm-dJY">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cOY-4D-MmJ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UITabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cOY-4D-MmJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5IW-Ck-zZr"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="W1N-wm-pvO">
@@ -406,10 +409,10 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hnX-cu-RLv" kind="relationship" relationship="viewControllers" id="F67-6g-WRR"/>
-                        <segue destination="Jfw-2J-dci" kind="relationship" relationship="viewControllers" id="QFW-3O-5Jl"/>
                         <segue destination="ZrI-0Y-FIH" kind="relationship" relationship="viewControllers" id="dMz-up-g3B"/>
-                        <segue destination="Pbr-Wm-2yG" kind="relationship" relationship="viewControllers" id="s0i-Ji-wto"/>
+                        <segue destination="Pbr-Wm-2yG" kind="relationship" relationship="viewControllers" id="Xq8-Nt-vzA"/>
+                        <segue destination="Jfw-2J-dci" kind="relationship" relationship="viewControllers" id="uMk-aa-gks"/>
+                        <segue destination="hnX-cu-RLv" kind="relationship" relationship="viewControllers" id="Ncz-cs-uJj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xz5-4f-R7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

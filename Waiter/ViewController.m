@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 
 @end
 
@@ -18,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+}
+- (IBAction)logoutBtnClicked:(id)sender {
 }
 
 

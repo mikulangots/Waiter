@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@import Firebase;
+@import FirebaseUI;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ViewControllerRestaurantSearch : UIViewController <UITableViewDataSource, UITableViewDataSource, UITableViewDelegate>{
     NSArray *arrListOfSectionHeaderTitles;
     NSArray *arrListOfRestaurants;
 }
+@property FIRFirestore *defaultFirestore;
+@property FIRAuthStateDidChangeListenerHandle handle;
 
 @end
 

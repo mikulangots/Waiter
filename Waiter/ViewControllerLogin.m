@@ -8,6 +8,7 @@
 
 #import "ViewControllerLogin.h"
 #import "ViewControllerMap.h"
+#import "ViewControllerRestaurantSearch.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
@@ -28,6 +29,23 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self initComponents];
+    
+    self.handle = [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth, FIRUser *_Nullable user){
+        NSLog(@"login status changed---------------");
+        if (user==nil){
+            NSLog(@"In addAuthStateDidChangeListener. user == nil is TRUE");
+            NSLog(@"The user is not signed in, the user has signed out");
+            [self dismissViewControllerAnimated:TRUE completion:nil];
+        }else{
+            NSLog(@"In addAuthStateDidChangeListener. user == nil is False");
+            NSLog(@"The user is signed in, the user has signed in");
+        }
+        //...
+    }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[FIRAuth auth] removeAuthStateDidChangeListener:_handle];
 }
 /*
 #pragma mark - Navigation
@@ -48,6 +66,13 @@ didSignInWithUser:(nullable FIRUser *)user
         NSLog(@"Login Unsuccessful ---------------------");
     }else{
         NSLog(@"Login Successful ---------------------");
+        
+        UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UITabBarController *myVC = [sb instantiateViewControllerWithIdentifier:@"UITabBarController"];
+        myVC.selectedIndex = 0;
+        [self presentViewController:myVC animated:YES completion:nil];
+        
+        [self.navigationController pushViewController:myVC animated:YES];
     }
 }
 
@@ -59,21 +84,51 @@ didSignInWithUser:(nullable FIRUser *)user
   return [[FUIAuth defaultAuthUI] handleOpenURL:url sourceApplication:sourceApplication];
 }
 
-
+-(void)authUI:(FUIAuth *)authUI didSignInWithAuthDataResult:( FIRAuthDataResult *)authDataResult error:( NSError *)error{
+    if (authDataResult.additionalUserInfo.isNewUser){
+        NSLog(@"brand new user -----------");
+        
+        //add a new document in collection "users"
+        [self saveNewUserProfileData:authDataResult.user];
+    }else{
+        NSLog(@"existing user --------------");
+    }
+}
 //User defined methods
 -(void)initComponents{
     _loginBtn.layer.cornerRadius = 15;
+    self.defaultFirestore = [FIRFirestore firestore];
 }
 
 - (IBAction)clickLogin:(id)sender {
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController *myVC = [sb instantiateViewControllerWithIdentifier:@"ViewControllerMap"];
+    UITabBarController *myVC = [sb instantiateViewControllerWithIdentifier:@"ViewControllerRestaurantSearch"];
     myVC.selectedIndex = 3;
     [self presentViewController:myVC animated:YES completion:nil];
     
     [self.navigationController pushViewController:myVC animated:YES];
 }
+
+
+
+-(void) saveNewUserProfileData:(FIRUser*)user{
+    //Add a new document in collection "users"
+    [[[self.defaultFirestore collectionWithPath:@"users"]documentWithPath:user.uid] setData:@{
+        @"email":user.email,
+        @"firstName":@"First Name",
+        @"lastName":@"Last Name",
+        @"userPhone":@"Phone Number",
+    }completion:^(NSError *_Nullable error){
+        if(error !=nil){
+            NSLog(@"Error writing document: %@", error );
+        }else{
+            NSLog(@"Document successfully written!" );
+        }
+    }];
+    
+}
+
 - (IBAction)loginBtnClicked:(id)sender {
     FUIAuth *authUI = [FUIAuth defaultAuthUI];
     // You need to adopt a FUIAuthDelegate protocol to receive callback

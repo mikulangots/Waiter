@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@import Firebase;
+@import FirebaseUI;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ViewControllerMenu : UIViewController <UITableViewDataSource, UITableViewDataSource, UITableViewDelegate>{
@@ -15,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
     NSArray *arrListOfSectionHeaderTitles;
     NSArray *arrListOfFood;
 }
-
+@property FIRFirestore *defaultFirestore;
+@property FIRAuthStateDidChangeListenerHandle handle;
 @end
 
 NS_ASSUME_NONNULL_END

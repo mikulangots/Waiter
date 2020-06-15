@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@import Firebase;
+@import FirebaseUI;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ViewControllerItem : UIViewController{
@@ -17,7 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 @property NSString *receivedItemName;
-
+@property FIRFirestore *defaultFirestore;
+@property FIRAuthStateDidChangeListenerHandle handle;
 @end
 
 NS_ASSUME_NONNULL_END

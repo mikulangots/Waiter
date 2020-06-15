@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2C4C5C2497FC2200E096D6 /* ViewControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C4C5B2497FC2200E096D6 /* ViewControllerProfile.m */; };
 		0FE712DF249794B0007952B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FE712DE249794B0007952B4 /* GoogleService-Info.plist */; };
 		0FE712E22497B54A007952B4 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 0FE712E12497B54A007952B4 /* FacebookLogin */; };
 		0FEAF5232463001300F9FF3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAF5222463001300F9FF3B /* AppDelegate.m */; };
@@ -67,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		037C8EE2C23E0A811AE6A115 /* Pods-WaiterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaiterTests.release.xcconfig"; path = "Target Support Files/Pods-WaiterTests/Pods-WaiterTests.release.xcconfig"; sourceTree = "<group>"; };
+		0F2C4C5A2497FC2200E096D6 /* ViewControllerProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerProfile.h; sourceTree = "<group>"; };
+		0F2C4C5B2497FC2200E096D6 /* ViewControllerProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerProfile.m; sourceTree = "<group>"; };
 		0FE712DE249794B0007952B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FEAF51E2463001300F9FF3B /* Waiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FEAF5212463001300F9FF3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				0FFE451E24837FA400119830 /* ViewControllerMap.m */,
 				0FFE452324839ED100119830 /* ViewControllerItem.h */,
 				0FFE452424839ED100119830 /* ViewControllerItem.m */,
+				0F2C4C5A2497FC2200E096D6 /* ViewControllerProfile.h */,
+				0F2C4C5B2497FC2200E096D6 /* ViewControllerProfile.m */,
 			);
 			path = Waiter;
 			sourceTree = "<group>";
@@ -584,6 +589,7 @@
 				0FEAF5232463001300F9FF3B /* AppDelegate.m in Sources */,
 				0FFE4517248356BA00119830 /* ViewControllerMenu.m in Sources */,
 				0FEAF5342463001400F9FF3B /* main.m in Sources */,
+				0F2C4C5C2497FC2200E096D6 /* ViewControllerProfile.m in Sources */,
 				0FFE45142482D23100119830 /* ViewControllerQRScanner.m in Sources */,
 				0FFE450F2482B87F00119830 /* ViewControllerRestaurantSearch.m in Sources */,
 				0FFE452524839ED100119830 /* ViewControllerItem.m in Sources */,
