@@ -11,6 +11,7 @@
 #import "ViewControllerRestaurantSearch.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "AppDelegate.h"
 
 
 @interface ViewControllerLogin ()
@@ -66,13 +67,8 @@ didSignInWithUser:(nullable FIRUser *)user
         NSLog(@"Login Unsuccessful ---------------------");
     }else{
         NSLog(@"Login Successful ---------------------");
+        [self showMainVC];
         
-        UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UITabBarController *myVC = [sb instantiateViewControllerWithIdentifier:@"UITabBarController"];
-        myVC.selectedIndex = 0;
-        [self presentViewController:myVC animated:YES completion:nil];
-        
-        [self.navigationController pushViewController:myVC animated:YES];
     }
 }
 
@@ -97,20 +93,10 @@ didSignInWithUser:(nullable FIRUser *)user
 //User defined methods
 -(void)initComponents{
     _loginBtn.layer.cornerRadius = 15;
-    self.defaultFirestore = [FIRFirestore firestore];
-}
-
-- (IBAction)clickLogin:(id)sender {
+    AppDelegate* objAppDelegate = (AppDelegate*) UIApplication.sharedApplication.delegate;
     
-    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController *myVC = [sb instantiateViewControllerWithIdentifier:@"ViewControllerRestaurantSearch"];
-    myVC.selectedIndex = 3;
-    [self presentViewController:myVC animated:YES completion:nil];
-    
-    [self.navigationController pushViewController:myVC animated:YES];
+    self.defaultFirestore = objAppDelegate.defaultFirestore;
 }
-
-
 
 -(void) saveNewUserProfileData:(FIRUser*)user{
     //Add a new document in collection "users"
@@ -130,6 +116,16 @@ didSignInWithUser:(nullable FIRUser *)user
 }
 
 - (IBAction)loginBtnClicked:(id)sender {
+    if ([[[FIRAuth auth] currentUser]uid]!=nil){
+        //User is already logged in
+        [self showMainVC];
+    }else{
+            [self showLoginVC];
+    }
+    
+}
+
+-(void)showLoginVC{
     FUIAuth *authUI = [FUIAuth defaultAuthUI];
     // You need to adopt a FUIAuthDelegate protocol to receive callback
     authUI.delegate = self;
@@ -145,5 +141,13 @@ didSignInWithUser:(nullable FIRUser *)user
     [self presentViewController:authViewController animated:YES completion:nil];
 }
 
+-(void)showMainVC{
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController *myVC = [sb instantiateViewControllerWithIdentifier:@"UITabBarController"];
+    myVC.selectedIndex = 0;
+    [self presentViewController:myVC animated:YES completion:nil];
+    
+    [self.navigationController pushViewController:myVC animated:YES];
+}
 
 @end

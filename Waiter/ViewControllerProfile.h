@@ -11,7 +11,8 @@
 @import FirebaseUI;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewControllerProfile : ViewController
+@interface ViewControllerProfile : ViewController 
+
 @property FIRFirestore *defaultFirestore;
 @property FIRAuthStateDidChangeListenerHandle handle;
 @end

@@ -24,6 +24,8 @@
     [FIRApp configure];
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     [FBSDKLoginButton class];
+    [self initData];
+    
     return YES;
 }
 
@@ -45,5 +47,8 @@
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
-
+-(void)initData{
+    
+    self.defaultFirestore = [FIRFirestore firestore];
+}
 @end

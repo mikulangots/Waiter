@@ -13,9 +13,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewControllerLogin : UIViewController <FUIAuthDelegate>
+@interface ViewControllerLogin : UIViewController <FUIAuthDelegate> 
 
 @property FIRFirestore *defaultFirestore;
+
 @property FIRAuthStateDidChangeListenerHandle handle;
 
 @end

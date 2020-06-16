@@ -53,7 +53,7 @@
         <!--PROFILE-->
         <scene sceneID="6N6-pQ-GNP">
             <objects>
-                <viewController title="PROFILE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hnX-cu-RLv" customClass="ViewControllerProfile" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerProfile" title="PROFILE" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hnX-cu-RLv" customClass="ViewControllerProfile" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L8w-39-SF0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,44 +82,44 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nee-cy-UtX">
-                                <rect key="frame" x="66" y="249" width="282" height="365"/>
+                                <rect key="frame" x="51" y="249" width="312" height="365"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EDq-cU-ApN">
-                                        <rect key="frame" x="41" y="47" width="200" height="271"/>
+                                        <rect key="frame" x="41" y="47" width="230" height="271"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FIRST NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T7a-yY-ebv">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="230" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LAST NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eD5-Rd-fcy">
-                                                <rect key="frame" x="0.0" y="49" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="49" width="230" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V93-DA-Qhf">
-                                                <rect key="frame" x="0.0" y="98" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="98" width="230" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MOBILE PHONE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6P-R5-qxD">
-                                                <rect key="frame" x="0.0" y="147" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="147" width="230" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nOb-ZE-Pi3">
-                                                <rect key="frame" x="0.0" y="196" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="196" width="230" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPJ-IW-nCY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <state key="normal" title="EDIT">
+                                                        <state key="normal" title="UPDATE">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwL-jA-rBW">
-                                                        <rect key="frame" x="75" y="0.0" width="50" height="30"/>
+                                                        <rect key="frame" x="85" y="0.0" width="60" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <state key="normal" title="CLEAR">
@@ -127,17 +127,20 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtN-OQ-Qle">
-                                                        <rect key="frame" x="150" y="0.0" width="50" height="30"/>
+                                                        <rect key="frame" x="170" y="0.0" width="60" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <state key="normal" title="SAVE">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="saveBtnClicked:" destination="hnX-cu-RLv" eventType="touchUpInside" id="NM7-EG-2Tl"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFP-Mp-E6Q">
-                                                <rect key="frame" x="0.0" y="241" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="241" width="230" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="LOGOUT">
@@ -184,6 +187,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="PROFILE" image="person" catalog="system" landscapeImage="person" selectedImage="person" id="EMY-4g-BSe"/>
                     <navigationItem key="navigationItem" id="HWl-0J-TpJ"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="V93-DA-Qhf" id="6vn-BP-D5j"/>
+                        <outlet property="firstNameTxt" destination="T7a-yY-ebv" id="fMN-dE-oUJ"/>
+                        <outlet property="lastNameTxt" destination="eD5-Rd-fcy" id="yQn-lf-afb"/>
+                        <outlet property="userPhoneTxt" destination="z6P-R5-qxD" id="vyu-ep-FrA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsP-5V-oQb" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,44 +230,44 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McL-8a-azL">
-                                <rect key="frame" x="71" y="249" width="272" height="222"/>
+                                <rect key="frame" x="56" y="249" width="302" height="222"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tL3-O8-rV0">
-                                        <rect key="frame" x="41" y="47" width="190" height="128"/>
+                                        <rect key="frame" x="41" y="47" width="220" height="128"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CARD NUMBER" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzS-wn-vBm">
-                                                <rect key="frame" x="0.0" y="0.0" width="190" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0KY-wV-FLf">
-                                                <rect key="frame" x="0.0" y="49" width="190" height="34"/>
+                                                <rect key="frame" x="0.0" y="49" width="220" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLu-Cx-Jol">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wy7-Dm-ljR">
-                                                        <rect key="frame" x="100" y="0.0" width="90" height="34"/>
+                                                        <rect key="frame" x="115" y="0.0" width="105" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tYp-3d-ux5">
-                                                <rect key="frame" x="0.0" y="98" width="190" height="30"/>
+                                                <rect key="frame" x="0.0" y="98" width="220" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vly-yC-CBz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <state key="normal" title="EDIT">
+                                                        <state key="normal" title="UPDATE">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDD-dg-57O">
-                                                        <rect key="frame" x="70" y="0.0" width="50" height="30"/>
+                                                        <rect key="frame" x="80" y="0.0" width="60" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <state key="normal" title="CLEAR">
@@ -266,7 +275,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcj-ua-fdp">
-                                                        <rect key="frame" x="140" y="0.0" width="50" height="30"/>
+                                                        <rect key="frame" x="160" y="0.0" width="60" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <state key="normal" title="SAVE">
@@ -329,7 +338,7 @@
                                 <rect key="frame" x="0.0" y="168.5" width="414" height="624.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SimpleIdentifier" textLabel="Q6i-04-M4d" detailTextLabel="92E-QG-KCa" style="IBUITableViewCellStyleValue1" id="Bht-be-sEL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SimpleIdentifier1" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SimpleIdentifier" textLabel="Q6i-04-M4d" detailTextLabel="92E-QG-KCa" style="IBUITableViewCellStyleValue1" id="Bht-be-sEL">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bht-be-sEL" id="CmS-De-jRq">
@@ -390,6 +399,9 @@
                         <viewLayoutGuide key="safeArea" id="0n5-2V-iEP"/>
                     </view>
                     <navigationItem key="navigationItem" id="rMW-p9-oK5"/>
+                    <connections>
+                        <outlet property="tableView" destination="m9H-yW-2ud" id="0Mr-KN-uP7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3t-ou-pja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

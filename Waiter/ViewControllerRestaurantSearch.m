@@ -10,6 +10,7 @@
 #import "ViewControllerRestaurantDetails.h"
 
 @interface ViewControllerRestaurantSearch ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -19,13 +20,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    arrListOfSectionHeaderTitles = @[@"A", @"B", @"C"];
+    //arrListOfSectionHeaderTitles = @[@"A", @"B", @"C"];
     
     arrListOfRestaurants = @[
         @[@"Aroma", @"Ali Baba"],
         @[@"Barvarian"],
         @[@"Chicken House", @"China Bar"]
     ];
+    
+    objNSDictionaryListOfRestaurants = [[NSMutableDictionary alloc] initWithCapacity:5];
+    
+    self.ref = [[FIRDatabase database]reference];
+    
+    [[_ref child:@"restaurants"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot){
+        for (FIRDataSnapshot* child in snapshot.children){
+            NSString *key = child.key;
+            NSDictionary *restaurantDict = child.value;
+            
+            [self->objNSDictionaryListOfRestaurants setObject:restaurantDict forKey:key];
+            
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -48,37 +64,49 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return [arrListOfSectionHeaderTitles count];
+    //return [arrListOfSectionHeaderTitles count];
+    return 1;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [arrListOfRestaurants[section] count];
+    return [objNSDictionaryListOfRestaurants count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return arrListOfSectionHeaderTitles[section];
+    //return arrListOfSectionHeaderTitles[section];
+    return @"List Of Restaurants";
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NSString *simpleIdentifier = @"SimpleIdentifier";
     UITableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:simpleIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = arrListOfRestaurants[indexPath.section][indexPath.row];
+    //List restaurants from database
+    NSString *restaurantNo = [objNSDictionaryListOfRestaurants allKeys][indexPath.row];
+    NSMutableString *restaurantData =[[NSMutableString alloc] init];
+    [restaurantData appendString:objNSDictionaryListOfRestaurants[restaurantNo][@"restaurantName"]];
+    cell.textLabel.text = restaurantData;
     cell.detailTextLabel.text = @"Detail";
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSString *itemClicked = arrListOfRestaurants[indexPath.section][indexPath.row];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *cellText = cell.textLabel.text;
+    //NSString *itemClicked = [indexPath.section][indexPath.row];
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewControllerRestaurantDetails* myVC = [sb instantiateViewControllerWithIdentifier:@"ViewControllerRestaurantDetails"];
-    myVC.receivedRestaurantName = itemClicked;
+    myVC.receivedRestaurantName = cellText;
     
     //[self presentViewController:myVC animated:YES completion:nil];
     [self.navigationController pushViewController:myVC animated:YES];
+    
+}
+
+//Self design methods
+-(void)loadRestaurantSearch{
     
 }
 /*

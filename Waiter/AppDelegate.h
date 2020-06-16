@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Firebase;
+@import FirebaseFirestore;
+@import FirebaseUI;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-
+@property FIRFirestore *defaultFirestore;
 @end
 
