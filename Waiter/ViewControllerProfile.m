@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTxt;
 @property (weak, nonatomic) IBOutlet UITextField *emailTxt;
 @property (weak, nonatomic) IBOutlet UITextField *userPhoneTxt;
+@property (weak, nonatomic) IBOutlet UIButton *updateBtn;
+@property (weak, nonatomic) IBOutlet UIButton *clearBtn;
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
+@property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 
 @end
 
@@ -101,6 +105,11 @@
     AppDelegate* objAppDelegate = (AppDelegate*) UIApplication.sharedApplication.delegate;
     
     self.defaultFirestore = objAppDelegate.defaultFirestore;
+    
+    _logoutBtn.layer.cornerRadius = 15;
+    _updateBtn.layer.cornerRadius = 15;
+    _clearBtn.layer.cornerRadius = 15;
+    _saveBtn.layer.cornerRadius = 15;
 }
 
 -(void) clearScreen{
